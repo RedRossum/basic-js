@@ -1,4 +1,4 @@
-import { NotImplementedError } from '../extensions/index.js';
+const { NotImplementedError } = require('../extensions/index.js');
 
 /**
  * Given some integer, find the maximal number you can obtain
@@ -11,9 +11,13 @@ import { NotImplementedError } from '../extensions/index.js';
  * For n = 152, the output should be 52
  *
  */
-export default function deleteDigit(n) {
+function deleteDigit(n) {
   const str = n.toString();
   const arr = str.split('')
     .map((item) => Number(str.replace(item, '')));
   return Math.max(...arr);
 }
+
+module.exports = {
+  deleteDigit
+};

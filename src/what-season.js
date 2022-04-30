@@ -1,4 +1,4 @@
-import { NotImplementedError } from '../extensions/index.js';
+const { NotImplementedError } = require('../extensions/index.js');
 
 /**
  * Extract season from given date and expose the enemy scout!
@@ -11,7 +11,7 @@ import { NotImplementedError } from '../extensions/index.js';
  * getSeason(new Date(2020, 02, 31)) => 'spring'
  *
  */
-export default function getSeason(date) {
+function getSeason(date) {
   if (date === undefined) return 'Unable to determine the time of year!';
 
   if (!(date instanceof Date)) {
@@ -31,3 +31,7 @@ export default function getSeason(date) {
     case (month > 7 && month < 11): return 'autumn';
   }
 }
+
+module.exports = {
+  getSeason
+};

@@ -1,4 +1,4 @@
-import { NotImplementedError } from '../extensions/index.js';
+const { NotImplementedError } = require('../extensions/index.js');
 
 /**
  * Given matrix, a rectangular matrix of integers,
@@ -16,7 +16,7 @@ import { NotImplementedError } from '../extensions/index.js';
  *
  * The result should be 9
  */
-export default function getMatrixElementsSum(matrix) {
+function getMatrixElementsSum(matrix) {
   let res = matrix[0].reduce((acc, item) => acc + item);
   for (let i = 1; i < matrix.length; i++) {
     for (let j = 0; j < matrix[i].length; j++) {
@@ -27,3 +27,7 @@ export default function getMatrixElementsSum(matrix) {
   }
   return res;
 }
+
+module.exports = {
+  getMatrixElementsSum
+};

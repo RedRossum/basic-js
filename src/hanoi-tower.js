@@ -1,4 +1,4 @@
-import { NotImplementedError } from '../extensions/index.js';
+const { NotImplementedError } = require('../extensions/index.js');
 
 /**
  * Calculate turns number and time (in seconds) required
@@ -14,11 +14,15 @@ import { NotImplementedError } from '../extensions/index.js';
  * calculateHanoi(9, 4308) => { turns: 511, seconds: 427 }
  *
  */
-export default function calculateHanoi(disksNumber, turnsSpeed) {
-  const turns = Math.pow(2, disksNumber) - 1;
+function calculateHanoi(disks, turnsSpeed) {
+  const turns = Math.pow(2, disks) - 1;
   const seconds = Math.floor(turns * 3600 / turnsSpeed);
   return {
     turns,
     seconds
   }
 }
+
+module.exports = {
+  calculateHanoi
+};
